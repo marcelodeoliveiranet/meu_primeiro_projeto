@@ -5,21 +5,21 @@ double truncateTo2Decimals(double value) {
 double calculaMediaNotas(List<double> notas) {
   double somaNotas = 0;
 
-  for (var nota in notas) {
+  for (double nota in notas) {
     somaNotas += nota;
   }
 
-  return somaNotas / notas.length;
+  return truncateTo2Decimals(somaNotas / notas.length);
+}
+
+String alunoAprovado(double nota) {
+  return nota >= 7 ? 'Aprovado' : 'Reprovador';
 }
 
 void main() {
   List<double> notas = [10, 9, 8.5];
-  double mediaNotas = truncateTo2Decimals(calculaMediaNotas(notas));
+  double mediaNotas = calculaMediaNotas(notas);
   print(mediaNotas);
 
-  if (mediaNotas >= 7) {
-    print('Aprovado');
-  } else {
-    print('Reprovado');
-  }
+  print(alunoAprovado(mediaNotas));
 }
