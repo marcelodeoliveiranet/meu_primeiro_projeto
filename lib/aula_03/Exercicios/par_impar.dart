@@ -8,7 +8,7 @@ void verificarNumero(int num1, void Function() onEven, void Function() onOdd) {
 
 void main() {
   verificarNumero(
-    10,
+    15,
     () => print("O número é par"),
     () => print("O número é impar"),
   );
