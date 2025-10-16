@@ -11,4 +11,11 @@ void fazerLogin(
   }
 }
 
-void main() {}
+void main() {
+  fazerLogin(
+    'Admin',
+    '1234',
+    () => print('Login com sucesso'),
+    () => print('Nome ou senha inválidos'),
+  );
+}
